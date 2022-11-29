@@ -7,58 +7,44 @@ $().ready(function () {
     // Form validation
     $("#signupForm").validate({
         /*
-            value: sets inital value
-            min: sets minimum value on the slider
-            max: sets maxium value on the slider
-            slide(): changes the value of the label with id #min_col
+            required: Means the input is required for the form to be valid
+            range: Only allows non-decimal numbers in the range (handles non-numbers such as strings, char, etc)
         */
         rules: {
             min_col: {
                 required: true,
-                number: true,
-                min: -50,
-                max: 50,
+                range: [-50, 50]        
             },
             max_col: {
                 required: true,
-                number: true,
-                min: -50,
-                max: 50,
+                range: [-50, 50]        
             },
             min_row: {
                 required: true,
-                number: true,
-                min: -50,
-                max: 50,
+                range: [-50, 50]        
             },
             max_row: {
                 required: true,
-                number: true,
-                min: -50,
-                max: 50,
+                range: [-50, 50]        
             }
         },
         // Messages
         messages: {
             min_col: {
                 required: " Please enter a value for minimum columns",
-                number: " Only numbers are accepted!",
-                min: " Please enter a number (-50 <= 0 <= 50)",
+                range: " Please enter a number (-50 <= 0 <= 50)",
             },
             max_col: {
                 required: " Please enter a value for maximum columns",
-                number: " Only numbers are accepted!",
-                min: " Please enter a number (-50 <= 0 <= 50)",
+                range: " Please enter a number (-50 <= 0 <= 50)",
             },
             min_row: {
                 required: " Please enter a value for minimum rows",
-                number: " Only numbers are accepted!",
-                min: " Please enter a number (-50 <= 0 <= 50)",
+                range: " Please enter a number (-50 <= 0 <= 50)",
             },
             max_row: {
                 required: " Please enter a value for maximum rows",
-                number: " Only numbers are accepted!",
-                min: " Please enter a number (-50 <= 0 <= 50)",
+                range: " Please enter a number (-50 <= 0 <= 50)",
             }
         }
     });
